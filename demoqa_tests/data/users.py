@@ -25,6 +25,6 @@ class User:
 user = User(first_name='Galiia', last_name='Uzbekova', day_of_birth=18, month_of_birth='February',
             year_of_birth='1994', photo='this-is-fine.png', email='galiiauzbekova@gmail.com', gender='Female',
             phone_number=8937365074,
-            current_address='Moscow', city='Delhi', state='NCR')
+            current_address='Moscow', city='Noida', state='NCR')
 
 user_interests = User.UserInterests(subject='English', hobby='Sports')

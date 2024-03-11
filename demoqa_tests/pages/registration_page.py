@@ -7,7 +7,7 @@ from demoqa_tests.data.users import user, user_interests
 class RegistrationPage:
 
     def open(self):
-        browser.open("/automation-practice-form")
+        browser.open("https://demoqa.com/automation-practice-form")
         return self
 
     def fill_first_name(self, user):
@@ -55,11 +55,15 @@ class RegistrationPage:
         return self
 
     def fill_state(self, user):
-        browser.element("#react-select-3-input").should(be.blank).type(user.state).press_enter()
+        browser.driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+
+        browser.element('#state').element('.css-19bqh2r').click()
+        browser.element('#react-select-3-option-0').should(have.text(user.state)).click()
         return self
 
     def fill_city(self, user):
-        browser.element("#react-select-4-input").should(be.blank).type(user.city).press_enter()
+        browser.element('#city').element('.css-1wy0on6').click()
+        browser.element('#react-select-4-option-2').should(have.text(user.city)).click()
         return self
 
     def fill_submit_btn(self):

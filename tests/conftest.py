@@ -6,11 +6,11 @@ from selene import browser
 
 
 @pytest.fixture(scope='function', autouse=True)
-def open_browser(request):
+def open_browser():
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": "122.0",
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -24,10 +24,9 @@ def open_browser(request):
 
     browser.config.driver = driver
 
-    browser.config.base_url = "https://demoqa.com"
-    browser.config.window_height = 1080
     browser.config.window_width = 1500
+    browser.config.window_height = 1080
 
-    yield browser
+    yield
 
     browser.quit()
