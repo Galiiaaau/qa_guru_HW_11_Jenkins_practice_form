@@ -9,4 +9,3 @@ def open_browser():
     browser.config.window_width = 1500
 
     yield
-    browser.quit()
